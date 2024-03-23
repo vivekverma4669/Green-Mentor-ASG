@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     try {
 
-      const response = await axios.post('https://grumpy-hare-sunbonnet.cyclic.app/login', formData);
+      const response = await axios.post('https://green-mentor-asg.onrender.com/login', formData);
       const { token } = response.data;
       const { email } = formData;
       console.log(response.data);

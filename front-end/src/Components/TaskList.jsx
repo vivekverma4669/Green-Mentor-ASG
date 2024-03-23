@@ -22,7 +22,7 @@ function TaskList() {
     if (confirmDelete) {
       try {
         setLoading(true);
-        const response = await fetch(`https://grumpy-hare-sunbonnet.cyclic.app/task/delete/${taskId}`, {
+        const response = await fetch(`https://green-mentor-asg.onrender.com/task/delete/${taskId}`, {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${token}`
@@ -48,7 +48,7 @@ function TaskList() {
   const handleToggle = async (taskId, task) => {
     try {
       const updatedTask = {...task, completed: !task.completed };
-      const response = await axios.put(`https://grumpy-hare-sunbonnet.cyclic.app/task/update/${taskId}`, updatedTask, {
+      const response = await axios.put(`https://green-mentor-asg.onrender.com/task/update/${taskId}`, updatedTask, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -69,7 +69,7 @@ function TaskList() {
   const fetchTasks = async () => {
     setLoading(true);
     try {
-      let url = `https://grumpy-hare-sunbonnet.cyclic.app/task?page=${currentPage}&limit=${tasksPerPage}`;
+      let url = `https://green-mentor-asg.onrender.com/task?page=${currentPage}&limit=${tasksPerPage}`;
       
       if (filter) {
         url = `${url}&completed=${filter}`;

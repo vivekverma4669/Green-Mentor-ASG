@@ -23,7 +23,7 @@ const TaskDetail = () => {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const response = await axios.get(`https://grumpy-hare-sunbonnet.cyclic.app/task/${id}`, {
+        const response = await axios.get(`https://green-mentor-asg.onrender.com/task/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

@@ -11,11 +11,11 @@ function App() {
     <div className="App">
     <BrowserRouter>
     <AuthProvider>
-  
+
     <Nav/>
     <AllRoutes/>
     <Footer/>
-
+    
     </AuthProvider>
     </BrowserRouter>
 

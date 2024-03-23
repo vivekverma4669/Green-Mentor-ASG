@@ -21,7 +21,7 @@ const SignUp = () => {
     setFormData(true);
     e.preventDefault();
     try {
-      const response = await axios.post('https://grumpy-hare-sunbonnet.cyclic.app/signup', formData);
+      const response = await axios.post('https://green-mentor-asg.onrender.com/signup', formData);
       console.log(response.data);
       setFormData({ name: '', email: '', password: '' });
       alert('Account Created ✅  Login now ');
