@@ -1,0 +1,22 @@
+#update form{
+    width: 550px;
+    margin: auto;
+    background-color: rgb(17, 16, 23);
+     display: grid;
+     text-align: center;
+     /* justify-content: center; */
+     flex-direction: column;
+     gap: 10px;
+     padding: 20px;
+}
+
+#update form input ,textarea{
+    width: 90%
+   
+}
+
+#update form button{
+    height: 40px;
+    margin: auto;
+    width: 70%
+}

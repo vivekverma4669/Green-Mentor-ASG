@@ -14,9 +14,7 @@ TaskRouter.get('/', async (req,res)=>{
       if (completed !== undefined) {
           filter.completed = completed;
       }
-
       const sortCriteria = { due_date: 1 };
-
       const tasks = await TaskModel.find(filter)
           .sort(sortCriteria)
           .limit(limit * 1)

@@ -1,0 +1,40 @@
+.add-Task form{
+    margin: auto;
+    background-color: #14171e;
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    gap: 20px;
+    padding: 40px;
+    margin-top: 50px;
+    color: aliceblue;
+    border: 2px solid;
+    border-radius: 10px;
+    align-items: center;
+}
+.add-Task form input , textarea{
+    width: 90%;
+}
+.add-Task form input{
+    height: 40px;
+}
+.add-Task form .date {
+ width: 50%;
+}
+.add-Task form button {
+    width: 80%;
+    margin: auto;
+    background-color: rgb(10, 141, 164);
+   background-color: rgb(77, 196, 30);
+    border-radius: 5px;
+    height: 40px;
+    color: aliceblue;
+    cursor: pointer;
+}
+.add-Task form button :hover{
+    background-color:  rgb(11, 155, 180);
+    cursor: pointer;
+}
+
+
+

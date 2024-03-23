@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import TaskListList from './Components/TaskList';
+import AddTask from './Components/AddTask';
+import Nav from './Components/Nav';
+import Footer from './Components/Footer';
+import { BrowserRouter } from 'react-router-dom';
+import Home from './Components/Home';
+import AllRoutes from './AllRoutes/AllRoutes';
+import { AuthProvider } from './Authcontext';
+
 
 function App() {
   return (
+    <BrowserRouter>
+    <AuthProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Nav/>
+    <AllRoutes/>
+
+    <Footer/>
     </div>
+    </AuthProvider>
+    </BrowserRouter>
   );
 }
 
