@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const UserModel = require('./models/User.module');
 const jwt = require('jsonwebtoken');
 const TaskRouter = require('./Router/Task.Routes');
-const {autentication}= require('./middleware/authentication');
+const { authentication } = require('./middleware/auth');
 const cors = require('cors');
 const app= express();
 app.use(express.json());
@@ -25,7 +25,6 @@ app.get('/', (req,res)=>{
     res.send({'app runing u are on home page now ': req.headers});
 });
 
-
 app.post('/signup', async (req,res)=>{
     const { name , email , password} = req.body;
 
@@ -45,8 +44,6 @@ app.post('/signup', async (req,res)=>{
     }
 }
 );
-
-
 
 app.post('/login', async (req, res) => {
     const { email , password } = req.body; 
@@ -75,10 +72,9 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.use(authentication);
 
-
-app.use(autentication);
-app.use('/task', TaskRouter);
+app.use('/task',TaskRouter);
   
 const Port=process.env.PORT  || 5000;
 app.listen(Port, async ()=>{

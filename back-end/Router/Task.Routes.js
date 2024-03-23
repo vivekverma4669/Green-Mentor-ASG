@@ -1,12 +1,12 @@
 express= require('express');
 const TaskRouter = express.Router();
 const TaskModel = require('../models/Task.module');
-// const UserModel = require('../models/User.module');
+const UserModel = require('../models/User.module');
 TaskRouter.use(express.json());
+
 
 TaskRouter.get('/', async (req,res)=>{
   const userId = req.headers.userId;
-
   try {
       const { page = 1, limit = 10, completed } = req.query;
       const filter = { user_id: userId };
@@ -16,6 +16,7 @@ TaskRouter.get('/', async (req,res)=>{
       }
       const sortCriteria = { due_date: 1 };
       const tasks = await TaskModel.find(filter)
+
           .sort(sortCriteria)
           .limit(limit * 1)
           .skip((page - 1) * limit)
@@ -41,6 +42,11 @@ TaskRouter.post('/create', async (req, res) => {
   const { title, content, due_date ,completed } = req.body;
   const userId = req.headers.userId; 
   try {
+    const user = await UserModel.findOne({ _id: userId });
+    if (!user) {
+      return res.status(401).json({ msg: 'Unauthorized' });
+    }
+
     const Task = await TaskModel.create({ title, content,  due_date , completed , user_id: userId });
     res.status(201).json({ msg: 'Task created successfully', Task });
   }
@@ -53,53 +59,50 @@ TaskRouter.post('/create', async (req, res) => {
 
 TaskRouter.get('/:id', async (req, res) => {
   const { id } = req.params;
+  const userId = req.headers.userId; 
   try {
-      const Task = await TaskModel.find({_id : id});
-      if (!Task) {
-          return res.status(404).json({ message: 'Task not found' });
-      }
-      res.json(Task);
-  }
-  catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Server error' });
+    const task = await TaskModel.findOne({ _id: id, user_id: userId });
+    if (!task) {
+      return res.status(404).json({ message: 'Task not found' });
+    }
+    res.json(task);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
-
-
 
 TaskRouter.put('/update/:id', async (req, res) => {
   const { id } = req.params;
-  const { title, content , due_date , completed } = req.body;
-
+  const { title, content, due_date, completed } = req.body;
+  const userId = req.headers.userId; // Get userId from headers
   try {
-      const updatedTask = await TaskModel.findByIdAndUpdate(id, { title, content , due_date , completed}, { new: true });
-
-      if (!updatedTask) {
-          return res.status(404).json({ message: 'Task not found' });
-      }
-
-      res.json({ message: 'Task updated successfully', Task: updatedTask });
+    const task = await TaskModel.findOne({ _id: id, user_id: userId });
+    if (!task) {
+      return res.status(404).json({ message: 'Task not found' });
+    }
+    const updatedTask = await TaskModel.findByIdAndUpdate(id, { title, content, due_date, completed }, { new: true });
+    res.json({ message: 'Task updated successfully', Task: updatedTask });
   } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Server error' });
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 
-
-
 TaskRouter.delete('/delete/:id', async (req, res) => {
   const { id } = req.params;
+  const userId = req.headers.userId; 
   try {
-      const deletedTask = await TaskModel.findByIdAndDelete(id);
-
-      if (!deletedTask) {
-          return res.status(404).json({ message: 'Task not found' });
-      }
-      res.json({ message: 'Task deleted successfully', Task: deletedTask });
+   
+    const task = await TaskModel.findOne({ _id: id, user_id: userId });
+    if (!task) {
+      return res.status(404).json({ message: 'Task not found' });
+    }
+    const deletedTask = await TaskModel.findByIdAndDelete(id);
+    res.json({ message: 'Task deleted successfully', Task: deletedTask });
   } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Server error' });
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 

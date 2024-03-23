@@ -83,9 +83,11 @@ function TaskList() {
   
       if (response.status === 200) {
         const data = response.data;
+        console.log(data);
         setTasks(data.tasks);
         setTotalTasks(data.totalPages * tasksPerPage);
-      } else {
+      }
+      else {
         setError('Failed to fetch tasks');
       }
     }
