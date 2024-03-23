@@ -41,13 +41,14 @@ TaskRouter.get('/', async (req,res)=>{
 TaskRouter.post('/create', async (req, res) => {
   const { title, content, due_date ,completed } = req.body;
   const userId = req.headers.userId; 
+  const createDate = new Date().toISOString(); 
   try {
     const user = await UserModel.findOne({ _id: userId });
     if (!user) {
       return res.status(401).json({ msg: 'Unauthorized' });
     }
 
-    const Task = await TaskModel.create({ title, content,  due_date , completed , user_id: userId });
+    const Task = await TaskModel.create({ title, content,  due_date  ,  create_date: createDate, completed , user_id: userId });
     res.status(201).json({ msg: 'Task created successfully', Task });
   }
   catch (error) {
