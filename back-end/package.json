@@ -6,5 +6,17 @@
     "express": "^4.19.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.3"
-  }
+  },
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
