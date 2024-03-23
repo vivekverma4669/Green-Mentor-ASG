@@ -34,6 +34,8 @@ function AddTask() {
          setNewTitle('');
          setNewDes('');
          setNewDate('');
+      }else{
+        console.log(res);
       }
 
     }

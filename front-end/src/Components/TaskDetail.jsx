@@ -47,7 +47,7 @@ const TaskDetail = () => {
     
     if (confirmDelete) {
       try {
-        const response = await fetch(`https://grumpy-hare-sunbonnet.cyclic.app/task/delete/${task._id}`, {
+        const response = await fetch(`https://green-mentor-asg.onrender.com/task/delete/${task._id}`, {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${token}`
@@ -80,7 +80,7 @@ const TaskDetail = () => {
 
     e.preventDefault();
     try {
-      const response = await axios.put(`https://grumpy-hare-sunbonnet.cyclic.app/task/update/${id}`, formData, {
+      const response = await axios.put(`https://green-mentor-asg.onrender.com/task/update/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`
         }
