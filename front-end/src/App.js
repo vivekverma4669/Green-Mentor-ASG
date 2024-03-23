@@ -11,6 +11,7 @@ import { AuthProvider } from './Authcontext';
 
 function App() {
   return (
+    <div>
     <BrowserRouter>
     <AuthProvider>
     <div className="App">
@@ -21,6 +22,8 @@ function App() {
     </div>
     </AuthProvider>
     </BrowserRouter>
+
+    </div>
   );
 }
 
