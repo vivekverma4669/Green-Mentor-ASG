@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MERN Task Management Application</title>
+<!--     <title>MERN Task Management Application</title> -->
 </head>
 <body>
 
@@ -95,6 +95,11 @@
 
 <h2 id="frontend-deployment">5. Front-end Deployment</h2>
  deployed url [https://green-mentor-asg.vercel.app/]
+<img src="https://drive.google.com/uc?id=1bTshEBjUCMad3Dse5dXIuppHpEgPyuTz" />
+<img src="https://drive.google.com/uc?id=11pmaxnrlAYDtk6yJAQqEBtWtXzo_bXMX" />
+<img src="https://drive.google.com/uc?id=1YDF4Nfn-13GWiAA-b3zP1aPtYX7slPnC" />
+<img src="https://drive.google.com/uc?id=14k72-H26NId86CsyKgVMX04mxspn9RFd" />
+
 
 <p>Explain how the frontend of the application is deployed and provide the deployment link.</p>
 
