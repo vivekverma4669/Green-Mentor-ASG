@@ -6,18 +6,18 @@ import AllRoutes from './AllRoutes/AllRoutes';
 import { AuthProvider } from './Authcontext';
 function App() {
   return (
-    <div className='App'>
+   
     <BrowserRouter>
     <AuthProvider>
-
+    <div className='App'>
     <Nav/>
     <AllRoutes/>
     <Footer/>
-    
+    </div>
     </AuthProvider>
     </BrowserRouter>
 
-    </div>
+    
   );
 }
 

@@ -28,11 +28,11 @@ const Footer =()=>{
                 <li>
              
                     <span><i className='bx bxs-map'></i></span>
-                    <span> 10 No. Market, E-3/49, Arera Colony, <br /> Bhopal, Madhya Pradesh, 462016 <br /> india</span>
+                    <span> <br />  gurgaon Haryana <br /> india</span>
                 </li>
                 <li>
                     <span><i className='bx bx-envelope' ></i></span>
-                    <p><a href="support@magnetbrains.com">support@magnetbrains.com</a></p>
+                    <p><a href="support@magnetbrains.com">support@greenmentors.com</a></p>
                 </li>
             </ul>
         </div>
