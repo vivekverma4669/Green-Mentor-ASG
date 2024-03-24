@@ -49,7 +49,7 @@
     <li>Clone the repository:</li>
 </ol>
 <code>
-    git clone &lt;repository_url&gt;
+    git clone &lt;[repository_url](https://github.com/vivekverma4669/Green-Mentor-ASG.git)&gt;
 </code>
 <ol start="2">
     <li>Install dependencies for both frontend and backend:</li>
@@ -70,14 +70,14 @@
     <li>Start the backend server:</li>
 </ol>
 <code>
-    cd backend<br>
+    cd back-end<br>
     node index.js
 </code>
 <ol start="5">
     <li>Start the frontend application:</li>
 </ol>
 <code>
-    cd frontend<br>
+    cd front-end<br>
     npm run start
 </code>
 <p>Access the application in your browser at <code>http://localhost:3000</code>.</p>
@@ -115,9 +115,6 @@ deployed api [https://green-mentor-asg.onrender.com]
   <li><code>/task/update/:id</code>: Endpoint to update a task by ID</li>
   <li><code>/task/delete/:id</code>: Endpoint to delete a task by ID</li>
 </ul>
-
-<h2 id="evaluation-criteria">7. Evaluation Criteria</h2>
-<p>Briefly mention how your project meets the evaluation criteria provided.</p>
 
 <h2 id="license">8. License</h2>
 <p>MIT License</p>
