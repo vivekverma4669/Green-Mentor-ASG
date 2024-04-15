@@ -5,11 +5,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function AddTask() {
+  
   const { token } = useContext(AuthContext);
   const [newTitle, setNewTitle] = useState('');
   const [newDes, setNewDes] = useState('');
   const [newDate, setNewDate] = useState('');
   const [loading,setLoading] =useState(false);
+
+
 
 
 
@@ -28,7 +31,6 @@ function AddTask() {
         body: JSON.stringify({ title: newTitle, content: newDes, due_date: newDate, completed: false }),
       });
       if (res.ok) {
-        //  alert('Task scheduled successfully 🎉');
          const notify = () => toast("Task scheduled successfully 🎉");
          notify();
          setNewTitle('');
